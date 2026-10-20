@@ -124,6 +124,15 @@
     li::marker { color: var(--faint); }
 
     code { font-family: ui-monospace, "Cascadia Code", Menlo, Consolas, monospace; font-size: 0.88em; }
+    figure.shot { margin: 20px 0 0; }
+    figure.shot img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      border: 1px solid var(--rule);
+    }
+    figure.shot figcaption { color: var(--muted); font-size: 13px; margin-top: 8px; }
     ul.prs { list-style: none; padding-left: 0; margin-top: 10px; color: var(--muted); }
     ul.prs li { display: grid; grid-template-columns: 4.5em 1fr; }
     ul.prs a { font-variant-numeric: tabular-nums; justify-self: start; }
@@ -191,6 +200,14 @@
         <li>Built an <a href="https://pkdota.ddns.net">analytics site</a> on top of that data store.</li>
         <li>Worked closely on product and technical decisions: architecture, UI/UX, features, engagement and growth.</li>
       </ul>
+      <figure class="shot">
+        <a href="images/pkdota.png"><img src="images/pkdota.png" width="1920" height="959" loading="lazy" alt="League stats page on the PD League platform, with match totals, Radiant vs Dire win rates, game records and hero pick and ban tables"></a>
+        <figcaption>League platform: the stats page for a season.</figcaption>
+      </figure>
+      <figure class="shot">
+        <a href="images/pkdota_analytics.png"><img src="images/pkdota_analytics.png" width="1920" height="959" loading="lazy" alt="Player page on the analytics site, with win rate, KDA, GPM, hero pool and recent matches"></a>
+        <figcaption>Analytics site: a player's stats, hero pool and recent matches.</figcaption>
+      </figure>
     </div>
 
     <div class="item">

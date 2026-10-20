@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mahad Khan</title>
+  <meta name="description" content="Mahad Khan, software engineer. Work, projects and contact.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mahad Khan">
+  <meta property="og:description" content="Software engineer. Work at PKDota, TUKL Lab, Motive and Alachisoft, and projects like qwen.c.">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f7f4ee;
+      --text: #2a2622;
+      --muted: #7b7369;
+      --faint: #b3aa9e;
+      --rule: #e4ddd2;
+      --link: #2a2622;
+      --link-line: #cdbfae;
+      --accent: #a0583a;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #1c1a17;
+        --text: #e8e2d8;
+        --muted: #9a9187;
+        --faint: #6b645b;
+        --rule: #2f2b26;
+        --link: #e8e2d8;
+        --link-line: #5a5148;
+        --accent: #d08a68;
+      }
+    }
+    :root[data-theme="dark"] {
+      --bg: #1c1a17;
+      --text: #e8e2d8;
+      --muted: #9a9187;
+      --faint: #6b645b;
+      --rule: #2f2b26;
+      --link: #e8e2d8;
+      --link-line: #5a5148;
+      --accent: #d08a68;
+    }
+
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+      font-size: 15px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    main {
+      max-width: 620px;
+      margin: 0 auto;
+      padding: 96px 20px 80px;
+    }
+    a {
+      color: var(--link);
+      text-decoration: underline;
+      text-decoration-color: var(--link-line);
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+      transition: text-decoration-color .15s;
+    }
+    a:hover { text-decoration-color: var(--accent); }
+
+    header h1 {
+      font-family: Newsreader, Georgia, serif;
+      font-weight: 500;
+      font-size: 30px;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+      margin: 0 0 4px;
+    }
+    header .role { color: var(--muted); margin: 0 0 24px; }
+    header p { margin: 0 0 14px; }
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 18px;
+      margin-top: 20px;
+      color: var(--muted);
+    }
+
+    section { margin-top: 64px; }
+    h2 {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+      margin: 0 0 20px;
+    }
+
+    .item { padding: 0 0 28px; }
+    .item + .item { border-top: 1px solid var(--rule); padding-top: 24px; }
+    .item-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+    }
+    .item-title { font-weight: 500; }
+    .item-date {
+      color: var(--muted);
+      font-size: 13px;
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+    .item-sub { color: var(--muted); margin-bottom: 8px; }
+    ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+    li { margin: 4px 0; }
+    li::marker { color: var(--faint); }
+
+    code { font-family: ui-monospace, "Cascadia Code", Menlo, Consolas, monospace; font-size: 0.88em; }
+    ul.prs { list-style: none; padding-left: 0; margin-top: 10px; color: var(--muted); }
+    ul.prs li { display: grid; grid-template-columns: 4.5em 1fr; }
+    ul.prs a { font-variant-numeric: tabular-nums; justify-self: start; }
+    .tags { color: var(--muted); font-size: 13px; margin-top: 2px; margin-bottom: 8px; }
+
+    dl.skills { margin: 0; display: grid; grid-template-columns: 140px 1fr; gap: 10px 16px; }
+    dl.skills dt { color: var(--muted); }
+    dl.skills dd { margin: 0; }
+
+    footer {
+      margin-top: 72px;
+      padding-top: 20px;
+      border-top: 1px solid var(--rule);
+      color: var(--muted);
+      font-size: 13px;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .theme-toggle {
+      background: none;
+      border: 0;
+      padding: 0;
+      font: inherit;
+      color: var(--muted);
+      cursor: pointer;
+    }
+    .theme-toggle:hover { color: var(--text); }
+
+    @media (max-width: 520px) {
+      main { padding: 56px 16px 56px; }
+      .item-head { flex-direction: column; gap: 0; }
+      dl.skills { grid-template-columns: 1fr; gap: 2px; }
+      dl.skills dd { margin-bottom: 10px; }
+    }
+  </style>
+</head>
+<body>
+<main>
+
+  <header>
+    <h1>Mahad Khan</h1>
+    <p class="role">Software engineer</p>
+    <p>I studied software engineering at NUST in Islamabad. Since then I have worked on enterprise web products at Motive, cloud infrastructure at Alachisoft, EEG and deep learning research at TUKL Lab, and a league and analytics platform at PKDota.</p>
+    <p>I also write low-level ML code, like <a href="https://github.com/asdf93074/qwen.c">qwen.c</a>, which runs Qwen3 inference in plain C and CUDA, and I have contributed to typescript-eslint.</p>
+    <p>I am looking for full stack or AI engineering roles. You can contact me at <a href="mailto:mahadk20@gmail.com">mahadk20@gmail.com</a>.</p>
+    <div class="links">
+      <a href="https://github.com/asdf93074">GitHub</a>
+      <a href="https://linkedin.com/in/mahad-khan-b5510219b/">LinkedIn</a>
+    </div>
+  </header>
+
+  <section>
+    <h2>Work</h2>
+
+    <div class="item">
+      <div class="item-head">
+        <span class="item-title">Product Engineer, <a href="https://pkdota.com">PKDota</a></span>
+        <span class="item-date">Feb 2024 – Aug 2026</span>
+      </div>
+      <div class="item-sub">Remote</div>
+      <ul>
+        <li>Co-designed and shipped a league platform used by 100+ active players across 200+ matches. It covers registration, matchmaking, reporting, match stats, moderation, chat and Discord integrations.</li>
+        <li>Designed a data pipeline that pulls data from APIs and scrapers and processes it for our data store.</li>
+        <li>Built an <a href="https://pkdota.ddns.net">analytics site</a> on top of that data store.</li>
+        <li>Worked closely on product and technical decisions: architecture, UI/UX, features, engagement and growth.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="item-head">
+        <span class="item-title">AI Research Intern, TUKL Lab</span>
+        <span class="item-date">Feb 2025 – Jul 2025</span>
+      </div>
+      <div class="item-sub">SEECS, NUST · Islamabad</div>
+      <ul>
+        <li>Implemented GAN and WGAN from scratch on MNIST and Fashion-MNIST to study how stable generative models are.</li>
+        <li>Reproduced WaveNet-LSTM on the TUAB EEG dataset and matched the published 85% accuracy.</li>
+        <li>Built a PyQt annotation tool that works with a GP3 eye tracker, so EEG can be labeled with help from gaze data.</li>
+        <li>Studied white-box adversarial attacks on deep learning models for EEG classification.</li>
+        <li>Researched end-to-end deep learning for EEG waveform segmentation (spike, delta and slow-wave detection).</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="item-head">
+        <span class="item-title">Software Engineer, Motive</span>
+        <span class="item-date">Mar 2021 – Aug 2023</span>
+      </div>
+      <div class="item-sub">Remote · Islamabad</div>
+      <ul>
+        <li>Built major features for enterprise customers, from requirements to production, on a Ruby on Rails and Postgres backend with an Angular frontend.</li>
+        <li>Improved the Rails test suite, cutting CI runtime by 35% and raising the build pass rate from 25% to 95%.</li>
+        <li>Proposed a shared UI component library, built a team around it, and led its adoption across frontend work.</li>
+        <li>Migrated the codebase from TSLint to typescript-eslint.</li>
+        <li>Sped up the frontend pre-commit step from 60s to 5s.</li>
+        <li>Mentored incoming interns for two years in a row.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="item-head">
+        <span class="item-title">Software Engineer, Alachisoft</span>
+        <span class="item-date">Jan 2020 – Mar 2021</span>
+      </div>
+      <div class="item-sub">Islamabad</div>
+      <ul>
+        <li>Led the design and launch of a new multi-tenant SaaS platform, from the first design to production.</li>
+        <li>Built a C# service that provisions custom clusters in private Azure and AWS environments.</li>
+        <li>Automated finding least-privilege IAM policies for cloud accounts, so permissions needed less manual setup. The script is on GitHub as <a href="https://github.com/asdf93074/AWSActionsToPolicy">AWSActionsToPolicy</a>.</li>
+        <li>Extended a Kubernetes operator in Go and added unit and end-to-end tests with KUTTL.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+
+    <div class="item">
+      <div class="item-head">
+        <a class="item-title" href="https://github.com/asdf93074/qwen.c">qwen.c</a>
+      </div>
+      <div class="tags">C, CUDA, PyTorch, Python</div>
+      <ul>
+        <li>Inference for Qwen3 0.6B, written from scratch in C/CUDA with no dependencies.</li>
+        <li>Parity tests against PyTorch.</li>
+        <li>Implements GQA, weight tying, RMSNorm and SwiGLU.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="item-head">
+        <a class="item-title" href="https://github.com/typescript-eslint/typescript-eslint">typescript-eslint</a>
+      </div>
+      <div class="tags">TypeScript · open source contributions</div>
+      <ul>
+        <li>Contributed new rules and bug fixes. The project has 16k+ stars and is used in most frontend projects.</li>
+      </ul>
+      <ul class="prs">
+        <li><a href="https://github.com/typescript-eslint/typescript-eslint/pull/5965">#5965</a><span>Added a <code>required</code> option to <code>member-ordering</code> for ordering required and optional members.</span></li>
+        <li><a href="https://github.com/typescript-eslint/typescript-eslint/pull/4221">#4221</a><span>Stopped <code>no-var-requires</code> from reporting a <code>require</code> made with <code>createRequire</code>.</span></li>
+        <li><a href="https://github.com/typescript-eslint/typescript-eslint/pull/11391">#11391</a><span>Made <code>typescript-estree</code> reject optional chains in tagged template literals.</span></li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="item-head">
+        <a class="item-title" href="https://github.com/asdf93074/tiny-workers">tiny-workers</a>
+      </div>
+      <div class="tags">Rust, SQLite, Tokio</div>
+      <ul>
+        <li>Async job worker library in Rust backed by an SQLite queue.</li>
+        <li>Jobs are leased, retried, and end in a success or failure state.</li>
+        <li>Generic <code>Worker&lt;T&gt;</code> with a <code>HandlesJob&lt;T&gt;</code> trait for plugging in async handlers over serde payloads.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <dl class="skills">
+      <dt>Languages</dt>
+      <dd>Python, Rust, C, JavaScript/TypeScript, Node.js, HTML, CSS, C#, Ruby</dd>
+      <dt>Libraries</dt>
+      <dd>PyTorch, NumPy, React, Angular, FastAPI, Tokio, CUDA</dd>
+      <dt>Tools</dt>
+      <dd>OpenCode, Codex, Neovim, Linux, Docker, Git, Kubernetes, AWS, Azure, Postgres, SQLite</dd>
+    </dl>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <div class="item">
+      <div class="item-head">
+        <span class="item-title">B.Sc. Software Engineering, NUST</span>
+        <span class="item-date">2015 – 2019</span>
+      </div>
+      <div class="item-sub">National University of Sciences and Technology · Islamabad</div>
+    </div>
+  </section>
+
+  <footer>
+    <span>Updated October 2026</span>
+    <button class="theme-toggle" type="button" aria-label="Toggle color theme">Theme</button>
+  </footer>
+
+</main>
+<script>
+  (function () {
+    var root = document.documentElement;
+    try {
+      var saved = localStorage.getItem('theme');
+      if (saved) root.setAttribute('data-theme', saved);
+    } catch (e) {}
+    document.querySelector('.theme-toggle').addEventListener('click', function () {
+      var current = root.getAttribute('data-theme') ||
+        (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      var next = current === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+    });
+  })();
+</script>
+</body>
+</html>
